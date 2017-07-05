@@ -1,2 +1,26 @@
 # homebrew-tap
-Homebrew Taps
+
+Homebrew Taps for Dwarves Foundation toolbox
+
+## Installation
+
+### Prerequise
+
+This is a part of homebrew, the missing package manager of MacOS. You need to install homebrew before using this repo. Visit https://brew.sh for more info
+
+### Usage
+
+```
+$ brew tap dwarvesf/homebrew-tap
+$ brew install dfdf
+```
+
+## License
+
+Copyright 2017 Dwarves Foundation
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
