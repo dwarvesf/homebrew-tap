@@ -7,11 +7,11 @@ class Bifrost < Formula
 
   if OS.mac?
     url "https://storage.googleapis.com/dwarvesf/bifrost/v0.7.5/bifrost_darwin_amd64.tar.gz"
-    sha256 "8c77e5e28330f8e1d9537d8b85afba00164495454ca0d36e55e65dd31d29a6fc"
+    sha256 "a8cd4ceb36998b08cd7dfb1638e4214611396bb4d9afc32bc951081fc5240535"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://storage.googleapis.com/dwarvesf/bifrost/v0.7.5/bifrost_linux_amd64.tar.gz"
-      sha256 "c89955f92dd56e6031cece513466a0d15d43a0760e5d2c5e6e9c34be22bafd79"
+      sha256 "5a9b07438eb14fc0ab785df2a026bcc760f8264a950e9e460d795eedd6f1526b"
     end
   end
 
