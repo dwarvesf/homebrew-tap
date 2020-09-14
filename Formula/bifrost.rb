@@ -2,16 +2,16 @@
 class Bifrost < Formula
   desc "The CLI tools for Fortress"
   homepage "https://d.foundation"
-  version "0.8.0"
+  version "0.9.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.8.0/bifrost_darwin_amd64.tar.gz"
-    sha256 "c1d966b216a78efe4dbadb49465b2233cbf5600914daed8aa866432cc5078101"
+    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.9.0/bifrost_darwin_amd64.tar.gz"
+    sha256 "ac8aa97ea572ff2f21d89ee15b8bb9a2da23bc31cf0a8ce1d9ebe207781135be"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.8.0/bifrost_linux_amd64.tar.gz"
-      sha256 "3281b4df4c360df202b95a61e40b5e75129f95d518c5161a6ea399863ad48a57"
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.9.0/bifrost_linux_amd64.tar.gz"
+      sha256 "211c2a7326cbdf90f5064360be04121fddcea73ac0ce42db2d467801abf18867"
     end
   end
 
