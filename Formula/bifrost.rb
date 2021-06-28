@@ -5,24 +5,29 @@
 class Bifrost < Formula
   desc "The CLI tools for Fortress"
   homepage "https://d.foundation"
-  version "0.11.1"
+  version "0.12.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.11.1/bifrost_darwin_amd64.tar.gz"
-    sha256 "d53cfa7084de2ff55ebc365a44a37b9e1893960fcc4a828cd51fe8e82087e593"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.12.0/bifrost_darwin_amd64.tar.gz"
+      sha256 "f20cd779456d120e96ddc0f1b2fdf92ff6379d8804d897896fc7e26d770064d7"
+    end
+    if Hardware::CPU.arm?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.12.0/bifrost_darwin_arm64.tar.gz"
+      sha256 "b86d52baa911a7a43ed5377dc0616ff9e7b364f1ce1e1fccc422a1bccc27b998"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.11.1/bifrost_darwin_arm64.tar.gz"
-    sha256 "71af1a96b5659535447fe05e12cce4907fa1e6858af0855c028de92ecab04e67"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.11.1/bifrost_linux_amd64.tar.gz"
-    sha256 "a676d41142d26f3606f4373131c51da6b282d93bcae9d23acc9a9cb6db45cd45"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://storage.googleapis.com/dwarvesf/bifrost/v0.11.1/bifrost_linux_arm64.tar.gz"
-    sha256 "33f90aeb746a1c77e2cb3c75ac57aebbf72664ce436168176e45a53bb0990244"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.12.0/bifrost_linux_amd64.tar.gz"
+      sha256 "0edbb2cd3d41fc4868060d6793c8b6e0d528c8fb7b347895a5d5ae4209fb58b9"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.12.0/bifrost_linux_arm64.tar.gz"
+      sha256 "2f4ab43f653122d13eff1cc7d70b1caea4b68962660b92ac18ad6a212ae65c2f"
+    end
   end
 
   def install
