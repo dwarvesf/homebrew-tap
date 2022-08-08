@@ -6,7 +6,6 @@ class Bifrost < Formula
   desc "The CLI tools for Fortress"
   homepage "https://d.foundation"
   version "0.13.2"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
