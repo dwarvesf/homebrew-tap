@@ -5,31 +5,43 @@
 class Bifrost < Formula
   desc "The CLI tools for Fortress"
   homepage "https://d.foundation"
-  version "0.13.2"
+  version "0.14.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.13.2/bifrost_darwin_amd64.tar.gz"
-      sha256 "26e630c94aa68df945db5db6da4a59a762dd330c9e7adf3d32523543ba7e0065"
-    end
     if Hardware::CPU.arm?
-      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.13.2/bifrost_darwin_arm64.tar.gz"
-      sha256 "086ff2aa9d4080736319aed8b9dd5265f8dab81a2b0b47bee472b87bcb93ba2a"
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.14.0/bifrost_darwin_arm64.tar.gz"
+      sha256 "46c96c6b2a0bcb4fc16773589e5c30f9b5cc225dad4bd2c61209e2cf95cd1849"
+
+      def install
+        bin.install "bifrost"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.14.0/bifrost_darwin_amd64.tar.gz"
+      sha256 "6cfa5777348bb867658876c66aff2dce16893a0f2abb6706772aa2021e25027b"
+
+      def install
+        bin.install "bifrost"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.13.2/bifrost_linux_amd64.tar.gz"
-      sha256 "2e2397105229fbd0edb15247d3f0c68a58de4601283675bfe8ffb54099644aeb"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.13.2/bifrost_linux_arm64.tar.gz"
-      sha256 "a3d3eb13a6929ed45df0554cfc8131c01735a8f0e09139d5c0999944e61c013d"
-    end
-  end
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.14.0/bifrost_linux_arm64.tar.gz"
+      sha256 "7a7829622a28792337fc3008016be53f962c7e86c77047dcc934cafbdf475539"
 
-  def install
-    bin.install "bifrost"
+      def install
+        bin.install "bifrost"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://storage.googleapis.com/dwarvesf/bifrost/v0.14.0/bifrost_linux_amd64.tar.gz"
+      sha256 "6692fce43e84708d02c4f5fa1e4e1e5cdb317c40f652d22956cbaf71ec7cd92a"
+
+      def install
+        bin.install "bifrost"
+      end
+    end
   end
 end
